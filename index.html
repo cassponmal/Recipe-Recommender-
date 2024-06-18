@@ -19,14 +19,20 @@
             <button type="button">Player 1: Name</button>
             <script>
                 const button = document.querySelector("button");
-          
                 button.addEventListener("click", updateName);
-          
                 function updateName() {
-                  const name = prompt("Enter a new name");
-                  button.textContent = `Player 1: ${name}`;
+                const name = prompt("Enter a new name");
+                button.textContent = `Player 1: ${name}`;
                 }
-              </script>
+            </script>
+            <h2>Find a Recipe for Desired Meal</h2>
+            <select id="locationSelector" style="display: none;">
+                <option value="Breakfast">La Jolla, CA</option>
+                <option value="Lunch">Irvine, CA</option>
+                <option value="Dinner">New York City, NY</option>
+                <option value="Dessert">Austin, TX</option>
+            </select>
         <main>
     </body>
 </html>
+
