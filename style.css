@@ -5,8 +5,16 @@
     src: url(https://fonts.gstatic.com/s/abhayalibre/v14/e3tmeuGtX-Co5MNzeAOqinEQfEnXgPRE4g.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+body {
+    background-color : rgb(183, 216, 183); 
+    color : rgb(0, 0, 0);
+    font-size : 1.5em;
+    font-family: 'Abhaya Libre', 'Times New Roman', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 header {
-    background-color: #b74545;
+    background-color: #427b52;
     color: white; 
     padding-top: 4em;
     padding-bottom: 4em;
@@ -18,34 +26,94 @@ h1 {
     font-size: 2em;
     text-align: center;
 }
-.clouds {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 500em;
-    height: 18em;
-    background: url(clouds.png) repeat-x;
-    animation: moveClouds 140s linear infinite;
-    /*z-index: -1; /* Ensure the clouds are behind other content */
+h2 {
+    margin: 1em;
+    padding: 0;
 }
-.button {
-    font-family: "helvetica neue", helvetica, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: 2px solid rgb(200 200 0 / 60%);
-    background-color: rgba(10, 50, 251, 0.6);
-    color: rgb(100 0 0 / 100%);
-    box-shadow: 1px 1px 2px rgb(0 0 200 / 40%);
+main {
+    margin: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#mealSelector {
+    font-family: 'Abhaya Libre', 'Times New Roman', Arial, sans-serif;
+    margin: 1em;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 3px 10px;
-    cursor: pointer;
-  }
-@keyframes moveClouds {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+    background-color: #fff;
+    padding: 0.5em;
+    font-size: 0.75em;
 }
+#mealSelector:hover {
+    border-color: #5e8b62;
+    cursor: pointer;
+}
+#mealSelector:focus {
+    outline: none;
+    border-color: #5e8b62;
+} 
+#recipeList {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
+    justify-content: center;
+}
+
+.recipe {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    height: 300px; /* Fixed height for uniformity */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.recipe img {
+    max-width: 100%;
+    max-height: 70%; /* Ensure image fits within the fixed height */
+    border-radius: 8px;
+}
+.recipe p {
+    margin: 0;
+    padding: 8px 0;
+}
+/* Developer Notes:
+recipeList holds on to the gallery.
+HTML: Sets up the structure with a div having the ID recipeList to hold the gallery.
+CSS:
+Targets the #recipeList ID to apply the flexbox layout for wrapping items in a grid-like structure.
+Styles each .recipe item.
+JavaScript: Iterates through the titles and images arrays, creating and appending div elements to form the gallery. 
+. (Class Selector): Targets elements with a specific class. Use when multiple elements should share the same style.
+
+Example: .recipe targets all elements with the class recipe.
+css
+Copy code
+.recipe {
+    border: 1px solid #ccc;
+}
+# (ID Selector): Targets a single, unique element with a specific ID. Use when only one element should have a specific style.
+
+
+
+          <button type="button">Player 1: Name</button>
+            <!-- <script>
+                //Internal JavaScript
+                const button = document.querySelector("button");
+                button.addEventListener("click", updateName);
+
+                function updateName() {
+                    const name = prompt("Enter a new name");
+                    button.textContent = `Player 1: ${name}`;
+                }
+            </script> -->
+
+*/

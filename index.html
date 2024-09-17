@@ -13,25 +13,34 @@
     <body>
         <header>
             <!-- Heading 1 for main title -->
-            <h1>What Should I Make?</h1>
+            <h1>What's on the Menu?</h1>
         </header>
         <main>
-            <button type="button">Player 1: Name</button>
-            <script>
-                const button = document.querySelector("button");
-                button.addEventListener("click", updateName);
-                function updateName() {
-                const name = prompt("Enter a new name");
-                button.textContent = `Player 1: ${name}`;
-                }
-            </script>
-            <h2>Find a Recipe for Desired Meal</h2>
-            <select id="locationSelector" style="display: none;">
-                <option value="Breakfast">La Jolla, CA</option>
-                <option value="Lunch">Irvine, CA</option>
-                <option value="Dinner">New York City, NY</option>
-                <option value="Dessert">Austin, TX</option>
+            <!-- <script src="script.js" defer></script> Externel JS-->
+            <h2>Find a Recipe for Desired Meal Type</h2>
+            <select id="mealSelector" >
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Dessert">Dessert</option>
             </select>
+            <div id="recipeList"></div>
+
+            <!-- Modal structure -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="recipeTitle"></h2>
+                    <img id="recipeImage" src="" alt="Recipe Image" style="width: 100%; border-radius: 8px;">
+                    <p id="recipeInstructions"></p>
+                </div>
+            </div>
+            <script> document.getElementById('myModal').style.display = 'none' </script>
+           
+            <!-- <div id="recipe-widget-location"></div>
+            <div id="recipe-widget-container"></div> -->
+            <script src="mealScript.js"></script>
+        
         <main>
     </body>
 </html>
